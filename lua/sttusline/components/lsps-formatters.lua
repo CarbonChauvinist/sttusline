@@ -73,9 +73,12 @@ return {
 			if has_conform then
 				vim.list_extend(
 					server_names,
-					vim.tbl_map(function(formatter) return formatter.name end, conform.list_formatters(0))
+					vim.tbl_map(
+						function(formatter) return "cnfrm:" .. formatter.name end,
+						conform.list_formatters(0)
+					)
 				)
-				if has_null_ls then server_names = vim.fn.uniq(server_names) end
+				if has_null_ls then server_names = { vim.fn.uniq(server_names) } end
 			end
 		end
 
