@@ -82,7 +82,7 @@ return {
 			end
 		end
 
-		return #server_names > 0 and table.concat(server_names, ", ") or "NO LSP, FORMATTER  "
+		return #server_names > 0 and table.concat(server_names, ", ") or ""
 	end,
 	condition = function() return vim.o.columns > 70 end,
 }
