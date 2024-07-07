@@ -10,6 +10,6 @@ return {
 
 	update = function()
 		local pos = vim.api.nvim_win_get_cursor(0)
-		return pos[1] .. ":" .. pos[2]
+		return string.format("%5i,%-4i", pos[1], pos[2])
 	end,
 }
